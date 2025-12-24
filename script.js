@@ -105,7 +105,8 @@ const updateFooterYear = () => {
     const footerText = document.querySelector('.footer p');
     if (footerText) {
         const currentYear = new Date().getFullYear();
-        footerText.textContent = footerText.textContent.replace('2024', currentYear);
+        // Replace the year pattern (4 consecutive digits) with current year
+        footerText.textContent = footerText.textContent.replace(/\b\d{4}\b/, currentYear);
     }
 };
 
